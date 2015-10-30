@@ -23,18 +23,11 @@ def next_question
   num2  = rand(1..20)
   index = rand(0..4)
 
-  operators = [' + ', ' - ', ' / ', ' * ', ' % ']
+  operators = ['+', '-', '/', '*', '%']
 
-  @question[0] = num1.to_s + operators[index] + num2.to_s + ' ='
+  @question[0] = num1.to_s + ' ' + operators[index] + ' ' + num2.to_s + ' ='
+  @question[1] = num1.send operators[index], num2
   
-  case index
-  when 0 then @question[1] = num1 + num2
-  when 1 then @question[1] = num1 - num2
-  when 2 then @question[1] = num1 / num2
-  when 3 then @question[1] = num1 * num2
-  when 4 then @question[1] = num1 % num2
-  end
-  #binding.pry
 end
 
 def ask(player)
