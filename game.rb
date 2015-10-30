@@ -1,4 +1,4 @@
-require './classes'
+require './player'
 require 'pry'
 
 def game_init
