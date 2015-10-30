@@ -1,4 +1,5 @@
 require './player'
+require 'colorize'
 require 'pry'
 
 def game_init
@@ -37,22 +38,22 @@ end
 def update(answer)
   if answer == @question[1].to_s
     @player1_is_active ? @player1.right : @player2.right
-    puts "Yup"
+    puts "Yup".green
   else
     @player1_is_active ? @player1.wrong : @player2.wrong
-    puts "Nope, correct answer is #{@question[1]}"
+    puts "Nope, correct answer is #{@question[1]}".red
     puts "#{@player1.name}, you have #{@player1.points} points and #{@player1.lives} lives left"
     puts "#{@player2.name}, you have #{@player2.points} points and #{@player2.lives} lives left"
   end
 end
 
 def winner(player)
-  puts "Congratulations #{player.name}, you won this game"
+  puts "Congratulations #{player.name}, you won this game".green
   puts "So far, you've answered #{player.points} questions correctly"
 end
 
 def loser(player)
-  puts "Too bad #{player.name}, you lost. Better luck next time"
+  puts "Too bad #{player.name}, you lost. Better luck next time".red
   puts "But at least you've answered #{player.points} questions correctly so far"
 end
 
