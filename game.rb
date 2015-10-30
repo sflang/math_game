@@ -48,19 +48,19 @@ def update(answer)
   else
     @player1_is_active ? @player1.wrong : @player2.wrong
     puts "Nope, correct answer is #{@question[1]}"
-    puts "#{@player1.name}, you have #{@player1.score} points and #{@player1.remaining_lives} lives left"
-    puts "#{@player2.name}, you have #{@player2.score} points and #{@player2.remaining_lives} lives left"
+    puts "#{@player1.name}, you have #{@player1.points} points and #{@player1.lives} lives left"
+    puts "#{@player2.name}, you have #{@player2.points} points and #{@player2.lives} lives left"
   end
 end
 
 def winner(player)
   puts "Congratulations #{player.name}, you won this game"
-  puts "So far, you've answered #{player.score} questions correctly"
+  puts "So far, you've answered #{player.points} questions correctly"
 end
 
 def loser(player)
   puts "Too bad #{player.name}, you lost. Better luck next time"
-  puts "But at least you've answered #{player.score} questions correctly so far"
+  puts "But at least you've answered #{player.points} questions correctly so far"
 end
 
 def game_summary

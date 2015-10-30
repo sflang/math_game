@@ -1,38 +1,27 @@
 class Player
   LIVES = 3
+   attr_accessor :name, :lives, :points
 
   def initialize(name)
-    @name   = name
-    @lives  = LIVES
-    @points = 0
+    self.name   = name
+    self.lives  = LIVES
+    self.points = 0
   end
 
   def reset_lives
-    @lives = LIVES
-  end
-
-  def name
-    @name
+    self.lives = LIVES
   end
 
   def right
-    @points += 1
+    self.points += 1
   end
 
   def wrong
-    @lives -= 1
-  end
-
-  def score
-    @points
-  end
-
-  def remaining_lives
-    @lives
+    self.lives -= 1
   end
 
   def is_alive?
-    @lives > 0
+    self.lives > 0
   end
 
 end
